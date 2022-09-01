@@ -1,0 +1,15 @@
+section{
+
+    width: 320px;
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+
+ul{
+    padding: 0;
+    
+}
+
