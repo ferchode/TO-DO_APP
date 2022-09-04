@@ -1,4 +1,4 @@
-button{
+.createButton{
 
     border: none;
     border-radius: 50%;
@@ -18,7 +18,7 @@ button{
     
 }
 
-button:hover{
+.createButton:hover{
 
     background-color: rgba(45, 61, 113, 0.6);
     scale: 1.2;
@@ -27,7 +27,7 @@ button:hover{
 
 @media (min-width: 600px) {
 
-    button{
+    .createButton{
 
        position: unset;
        place-self: center;

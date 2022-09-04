@@ -1,0 +1,59 @@
+.modal-cont{
+
+    width: 315px;
+    height: 315px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    place-content: center;
+    box-shadow: 0px 0px 30px 3px rgba(66,61,66,1);
+    border-radius: 8px;
+}
+
+.modal-cont p{
+
+    place-self: center;
+}
+
+.modal-cont textarea{
+
+    border-radius: 8px;
+    border: 2px solid #505E8D;
+    padding: 5px;
+}
+.modal-cont textarea::placeholder{
+
+    text-align: center;
+
+}
+
+.btns{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    place-items: center;
+
+}
+
+.btnModal{
+
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #505E8D;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+}
+
+@media (min-width: 900px) {
+    
+    .btnModal:hover{
+
+        scale: 1.1;
+    }
+}
+
