@@ -1,31 +1,73 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { TodoContext } from '../TodoContext';
 import './Modal.css'
 
-// const modal = ReactDOM.createRoot(document.getElementById('modal'));
+function Modal() {
 
-// modal.render(
+    const [newTodoValue, setNewTodoValue] = React.useState('');
 
-//     <App />
+    const{
     
-// )
+        addTodo,
+        setOpenModal,
+        loading,
+    
+    } = React.useContext(TodoContext)
 
-function Modal({children}) {
+    const onChange = (event) =>{
+
+        setNewTodoValue(event.target.value)
+    }
+
+    const onCancel = () => {
+
+        setOpenModal(false)
+    };
+
+    const onSubmit = (event) => {
+
+        event.preventDefault();
+        addTodo(newTodoValue);
+        setOpenModal(false)
+        
+        
+    }
 
     return ReactDOM.createPortal(
 
-        <div className='modal-cont'>
+        <form 
+        className='modal-cont'
+        onSubmit={onSubmit}
+        >
             <p>Escribe tu nuevo TO-DO</p>
             
             <textarea
-            placeholder='Escribe aquí tu TO-DO' 
+            placeholder='Escribe aquí tu TO-DO'
+            value={newTodoValue} 
+            onChange={onChange}
             />
 
             <div className='btns'>
-            <button className='cancelar btnModal'>Cancelar</button>
-            <button className='cancelar btnModal'>Añadir</button>
+            
+            <button 
+            className='cancelar btnModal'
+            type='button'
+            onClick={onCancel}
+            >
+                Cancelar
+            </button>
+            
+            <button 
+            className='cancelar btnModal'
+            type='submit'
+            >
+            
+                Añadir
+            </button>
+            
             </div>
-        </div>,
+        </form>,
         document.getElementById('modal')
         
     )

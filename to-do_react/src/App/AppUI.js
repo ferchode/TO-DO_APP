@@ -6,6 +6,9 @@ import {TodoList} from '../TodoList'
 import { TodoItem } from '../TodoItem';
 import {CreateTodoButton} from '../CreateTodoButton'
 import {Modal} from '../Modal'
+import {MyLoader} from '../LoadingScreen'
+import { EmptyLoadedview } from '../EmptyLoadedView';
+import { ErrorScreen } from '../ErrorScreen';
 
 function AppUI() {
 
@@ -16,6 +19,7 @@ function AppUI() {
     deleteTodo,
     openModal,
     setOpenModal,
+    totalTodos,
 
   } = React.useContext(TodoContext)
 
@@ -28,9 +32,9 @@ function AppUI() {
 
         <TodoList >
 
-        {loading && <p>Estamos cargando, no desesperes</p>}
-        {error && <p>Desesperate, hubo un error</p>}
-        {(!loading && !searchedTodos.lenght) && <p>Crea tu primer TO-DO❗</p>}
+        {loading && <MyLoader/>}
+        {error && <ErrorScreen/>}
+        {(!loading && !searchedTodos.length) && <EmptyLoadedview />}
 
         {searchedTodos.map(todo => (
                   <TodoItem 

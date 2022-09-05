@@ -1,15 +1,18 @@
-li{
+ul{
     width: 100%;
+}
+li{
+    width: 90%;
     height: 60px;
     background-color: #505E8D;
     display: grid;
     grid-template-columns: 30px auto 30px;
     place-items: center;
     margin-bottom: 20px;
-    gap: 8px;
     border-radius: 20px;
     padding: 8px;
     transition: 0.4s;
+    
 }
 
 li:hover{

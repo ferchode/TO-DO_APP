@@ -1,0 +1,21 @@
+.warning-container{
+
+    width: 100%;
+}
+
+.warn-message{
+
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+.warningImg{
+
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+.warningImg img{
+
+    width: 200px;
+}

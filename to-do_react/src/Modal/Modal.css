@@ -1,12 +1,17 @@
 .modal-cont{
 
-    width: 315px;
-    height: 315px;
+    width: 320px;
+    height: calc(320px - 10%);
     display: grid;
+    place-content: center;
     grid-template-rows: repeat(3, 1fr);
     place-content: center;
     box-shadow: 0px 0px 30px 3px rgba(66,61,66,1);
     border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    top: 180px;
+    z-index: 1;
 }
 
 .modal-cont p{
